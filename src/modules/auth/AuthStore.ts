@@ -19,6 +19,7 @@ export default class AuthStore {
   checkRefreshToken() {
     const data = LocalStorage.get(LocalStorageKeys.User);
     if (!data) {
+      console.log('checkRefreshToken -> ', data);
       return;
     }
 
@@ -44,6 +45,7 @@ export default class AuthStore {
 
     try {
       const data = await this.authService.refreshToken(refreshToken);
+      console.log('Token refreshed');
       this.saveTokenData(data, wallet);
     } catch (error) {}
   };
@@ -87,8 +89,10 @@ export default class AuthStore {
         await rootStore.userStore.getUserInfo();
         rootStore.commonStore.setDialogs(CommonDialogs.Sign, false);
         this.setIsConnected(true);
+        console.log('Login success');
       }
     } catch (error: any) {
+      console.log('signIn -> ', error);
       rootStore.commonStore.setDialogs(CommonDialogs.Sign, false);
       this.logout();
     } finally {
@@ -105,8 +109,10 @@ export default class AuthStore {
 
     try {
       const found = await this.authService.checkAuth(wallet);
+      console.log('User found in DB -> ', found);
       this.setIsUserExist(found);
     } catch (error: any) {
+      console.log('checkAuth -> ', error);
       if (error?.response?.status === 404) {
         this.setIsUserExist(error.response.data.found);
       }
@@ -121,6 +127,7 @@ export default class AuthStore {
     LocalStorage.remove(LocalStorageKeys.Signature);
     this.setIsConnected(false);
     this.authService.removeTokenFromHeader();
+    console.log('Logout success');
   };
 
   saveTokenData = (data: SuccessAuth, address: string) => {
@@ -128,7 +135,7 @@ export default class AuthStore {
     const timeNow = new Date().getTime();
     const tokenData = { token: refreshToken, expiredRefresh, expiredAccess, address, time: timeNow };
     LocalStorage.set(LocalStorageKeys.User, tokenData);
-
+    console.log('Token info saved');
     if (accessToken) {
       this.authService.setTokenToHeader(accessToken);
     }
