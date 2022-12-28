@@ -1,8 +1,8 @@
 Ekta Next.js frontend.
 <br/><br/>
 
- How run template: <br/>
+ How run template: <br/><br/>
     1. yarn install<br/>
     2. yarn dev<br/><br/>
 
- Also configure you ide for prettier for code style. Prettier file available.
+ Also configure prettier in your IDE for code style. Prettier file available.
