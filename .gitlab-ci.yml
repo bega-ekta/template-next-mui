@@ -1,0 +1,20 @@
+stages:
+  - deploy
+
+deploy-to-main:
+  stage: deploy
+  script:
+    - ssh -o "StrictHostKeyChecking no" -o PasswordAuthentication=no ekta@localhost "bash ~/deploy/deploy_claim.sh $CI_COMMIT_BRANCH $CI_PIPELINE_IID"
+  only:
+    - main
+  tags:
+    - deploy-prod
+
+deploy-to-dev:
+  stage: deploy
+  script:
+    - ssh -o "StrictHostKeyChecking no" -o PasswordAuthentication=no ekta@localhost "bash ~/deploy/deploy_claim.sh $CI_COMMIT_BRANCH $CI_PIPELINE_IID"
+  only:
+    - dev
+  tags:
+    - deploy-dev

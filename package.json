@@ -1,0 +1,44 @@
+{
+  "name": "portal-rewards-claim",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 127.0.0.4",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
+    "@hookform/resolvers": "2.9.10",
+    "@mui/icons-material": "5.10.14",
+    "@mui/lab": "5.0.0-alpha.108",
+    "@mui/material": "5.10.14",
+    "@mui/x-date-pickers": "5.0.9",
+    "axios": "1.1.3",
+    "dayjs": "1.11.6",
+    "ethers": "5.7.2",
+    "mobx": "6.7.0",
+    "mobx-react-lite": "3.4.0",
+    "next": "13.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.40.0",
+    "react-papaparse": "4.1.0",
+    "react-toastify": "9.1.1",
+    "sharp": "0.31.2",
+    "wagmi": "0.8.4",
+    "yup": "0.32.11"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "4.0.0",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.3",
+    "prettier": "2.7.1",
+    "typescript": "4.8.4"
+  }
+}
