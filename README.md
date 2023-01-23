@@ -5,4 +5,4 @@ Ekta Next.js frontend.
     1. yarn install<br/>
     2. yarn dev<br/><br/>
 
- Also configure prettier in your IDE for code style. Prettier file available.
+ Also configure prettier in your IDE for code style. Prettier file is available.
