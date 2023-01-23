@@ -16,7 +16,6 @@ class RootStore {
     this.userStore = new UserStore();
     this.commonStore = new CommonStore();
     this.historyStore = new HistoryStore();
-
   }
 }
 
