@@ -54,8 +54,8 @@ Next.js project structure. For more info go to [nextjs.org](https://nextjs.org/)
  *Inside modules folder should be module folder. Inside module folder should be **ModuleStore**, **ModuleService**, **ModuleApi**, **ModuleFactory***<br>
 - ***ModuleStore*** -- global Mobx store. All data should be here.
 - ***ModuleService*** -- here should be all data modifications and api calls.
-- ***ModuleFactory*** -- factory is used for create data structures from models. If not use factory you will get errors when you data null or undefined. Factory helps you make sure that you will get your data correctly.
-- ***ModuleApi*** -- all api calls should be here. If there is no api don't need use<br><br>
+- ***ModuleFactory*** -- factory is used for create data structures from models. If not use factory you will get errors when your data null or undefined. Factory helps you make sure that you will get your data correctly.
+- ***ModuleApi*** -- all api calls should be here. If there is no api don't need use it<br><br>
   ![structure](/public/images/template/modules.png)
 ### Auth
 *In the template already have registration and login with our api. We are using **signature** for register users and **Bearer token** for login and fetch data*<br>
